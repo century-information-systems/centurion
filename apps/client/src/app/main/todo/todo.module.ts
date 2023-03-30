@@ -10,6 +10,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmationService } from "primeng/api";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
         TodoEditPageComponent,
     ],
     imports: [
+        CommonModule,
         RouterModule.forChild(todoRoutes),
         ButtonModule,
         CardModule,
