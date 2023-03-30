@@ -4,9 +4,12 @@ import { TodoDetailPageComponent } from "./pages/todo-detail-page/todo-detail-pa
 import { TodoEditPageComponent } from "./pages/todo-edit-page/todo-edit-page.component";
 import { TodoListPageComponent } from "./pages/todo-list-page/todo-list-page.component";
 import { TodoNewPageComponent } from "./pages/todo-new-page/todo-new-page.component";
+import { CardModule } from 'primeng/card';
 import { todoRoutes } from "./todo.routes";
-
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ButtonModule } from 'primeng/button';
+import { ConfirmationService } from "primeng/api";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -18,6 +21,15 @@ import { ButtonModule } from 'primeng/button';
     imports: [
         RouterModule.forChild(todoRoutes),
         ButtonModule,
+        CardModule,
+        ConfirmDialogModule,
+        FormsModule,
+        ReactiveFormsModule
+
+
+
     ],
+
+    providers: [ConfirmationService]
 })
 export class TodoModule { }

@@ -23,7 +23,7 @@ export class TodoEndpoint implements TodoEndpointContract {
         return this.httpClient.post<Todo>(`${this.baseUrl}/create`, data);
     }
 
-    update(id: string, data: UpdateTodoDto): Promise<Todo> | Observable<Todo> {
+    update(id: string, data: UpdateTodoDto): Observable<Todo> {
         return this.httpClient.patch<Todo>(`${this.baseUrl}/update/${id}`, data);
     }
 
