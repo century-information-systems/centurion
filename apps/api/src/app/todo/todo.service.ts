@@ -23,6 +23,7 @@ export class TodoService {
     }
 
     create(data: CreateTodoDto): Promise<Todo> {
+      console.log(data)
         const todo: Todo = {
             id: Date.now().toString(),
             title: data.title,
