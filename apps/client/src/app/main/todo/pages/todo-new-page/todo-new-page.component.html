@@ -1,1 +1,22 @@
-<p>todo-new-page works!</p>
+<form [formGroup]="newTodo" (ngSubmit)="addTodo()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title </label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      formControlName="title"
+      required
+    />
+    <div>
+      <small
+        *ngIf="
+          newTodo.get('title').hasError('required') &&
+          newTodo.get('title').touched
+        "
+        >Title is Required</small
+      >
+    </div>
+  </div>
+  <button type="submit" [disabled]="!newTodo.valid" class="btn p-button">Submit</button>
+</form>

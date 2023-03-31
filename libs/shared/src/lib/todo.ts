@@ -1,3 +1,4 @@
+import { IsNotEmpty } from 'class-validator';
 import { Observable } from 'rxjs';
 
 export interface Todo {
@@ -7,10 +8,12 @@ export interface Todo {
 }
 
 export class CreateTodoDto {
+    @IsNotEmpty()
     title!: string;
 }
 
 export class UpdateTodoDto {
+    @IsNotEmpty()
     title!: string;
 }
 
