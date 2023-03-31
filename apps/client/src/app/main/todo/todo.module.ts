@@ -7,7 +7,7 @@ import { TodoNewPageComponent } from "./pages/todo-new-page/todo-new-page.compon
 import { CardModule } from 'primeng/card';
 import { todoRoutes } from "./todo.routes";
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-
+import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmationService } from "primeng/api";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -27,6 +27,7 @@ import { CommonModule } from "@angular/common";
         CardModule,
         ConfirmDialogModule,
         FormsModule,
+        InputTextModule,
         ReactiveFormsModule
 
 
