@@ -22,6 +22,7 @@ export class TodoListPageComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (todos) => {
           this.todos = todos;
+          console.log('todos', todos);
         },
         error: (error) => {
           console.log(`An error occured when attempting to fetch a list of todos...`);
@@ -30,6 +31,7 @@ export class TodoListPageComponent implements OnInit, OnDestroy {
       });
 
     this._subscriptions.push(todoEndpointListSubscription);
+    console.log('_subscription', todoEndpointListSubscription);
   }
 
   ngOnDestroy(): void {

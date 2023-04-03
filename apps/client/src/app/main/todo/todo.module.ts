@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { ConfirmationService } from "primeng/api";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
+import { TableModule } from 'primeng/table';
 
 @NgModule({
     declarations: [
@@ -28,8 +29,8 @@ import { CommonModule } from "@angular/common";
         ConfirmDialogModule,
         FormsModule,
         InputTextModule,
-        ReactiveFormsModule
-
+        ReactiveFormsModule,
+        TableModule
 
 
     ],
