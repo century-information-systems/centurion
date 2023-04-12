@@ -30,7 +30,7 @@ export class TodoNewPageComponent implements OnInit, OnDestroy {
     this.newTodo = this.fb.group({
       title: ['', Validators.required],
     });
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 
   addTodo() {
@@ -49,6 +49,10 @@ export class TodoNewPageComponent implements OnInit, OnDestroy {
         },
       });
     }
+  }
+
+  goBack() {
+    return this.router.navigate(['todos/list'])
   }
 
   ngOnDestroy(): void {

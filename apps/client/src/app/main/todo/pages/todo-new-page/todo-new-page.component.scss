@@ -8,3 +8,10 @@ button[disabled] {
   opacity: 0.5;
   cursor: not-allowed;
 }
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}

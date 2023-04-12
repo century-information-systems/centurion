@@ -1,22 +1,60 @@
-<form [formGroup]="newTodo" (ngSubmit)="addTodo()">
-  <div class="mb-3">
-    <label for="title" class="form-label">Title </label>
-    <input
-      type="text"
-      class="form-control"
-      id="title"
-      formControlName="title"
-      required
-    />
-    <div>
-      <small
-        *ngIf="
-          newTodo.get('title').hasError('required') &&
-          newTodo.get('title').touched
-        "
-        >Title is Required</small
-      >
+<div class="card w-full">
+  <form [formGroup]="newTodo" (ngSubmit)="addTodo()">
+    <h4 class="text text-primary ml-2">Add New ToDo</h4>
+    <div class="formgrid">
+      <div class="field col-6 md:col-6">
+        <label for="name"><b>Title</b> <span class="p-error"> *</span></label>
+        <input
+          pInputText
+          id="full_name"
+          type="text"
+          formControlName="title"
+          class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          required
+        />
+        <br />
+        <div>
+          <small
+            *ngIf="
+              newTodo.get('title').hasError('required') &&
+              newTodo.get('title').touched
+            "
+            >Title is Required</small
+          >
+        </div>
+        <br />
+        <div>
+          <button
+            pRipple
+            pButton
+            pRipple
+            label="Submit"
+            icon="pi pi-send"
+            iconPos="left"
+            type="submit"
+            [disabled]="!newTodo.valid"
+            class="btn p-button"
+          >
+          </button>
+        </div>
+      </div>
+
+      <div class="field col-6 md:col-6">
+        <hr />
+        <div class="flex justify-content-between w-full">
+          <button
+            pRipple
+            pButton
+            pRipple
+            type="button"
+            label="Go Back"
+            (click)="goBack()"
+            class="p-button-warning"
+            icon="pi pi-arrow-left"
+            iconPos="left"
+          ></button>
+        </div>
+      </div>
     </div>
-  </div>
-  <button type="submit" [disabled]="!newTodo.valid" class="btn p-button">Submit</button>
-</form>
+  </form>
+</div>
