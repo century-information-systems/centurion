@@ -1,12 +1,13 @@
 <div class="card">
-    <p-table [value]="todos" editMode="row" [tableStyle]="{'min-width': '50rem', 'max-width': '70rem', 'margin': 'auto'}">
+    <p-table [value]="todos" editMode="row" [tableStyle]="{'min-width': '50rem', 'max-width': '60rem', 'margin': 'auto'}">
         <ng-template pTemplate="header">
             <tr>
-                <th style="width:80%">Todos</th>
+                <th style="width:70%">Todos</th>
                 <th style="width:20%">Status</th>
+                <th style="width:10%"></th>
             </tr>
             <tr *ngFor="let todo of todos; let i=index;">
-                <td style="width:80%">
+                <td style="width:70%">
                     {{ todo?.title }}
                 </td>
                 <td style="width:20%">
@@ -19,6 +20,9 @@
                         </p>
                     </div>
                 </td>
+                <td style="width:10%">
+                    <a routerLink="/todos/edit/{{todo.id}}" pButton type="button" [style]="{'text-decoration': 'none'}" class="m-2">Edit</a>
+                </td>
             </tr>
         </ng-template>
         
@@ -27,6 +31,4 @@
 
 <div class="mt-4 flex">        
     <a routerLink="/todos/new" pButton type="button" [style]="{'text-decoration': 'none'}" class="m-2">New Todo</a>
-    
-    <a routerLink="/todos/edit" pButton type="button" [style]="{'text-decoration': 'none'}" class="m-2">Edit</a>
 </div>
